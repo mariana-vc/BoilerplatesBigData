@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Panda Boilerplates</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="stylesheets/demo.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/style3.css" />
+
+        <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/demo1.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/component.css" />
+        <script type='text/javascript' src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+
+        <script src="js/modernizr.custom.js"></script>
+        <script type='text/javascript' src='js/askWatson.js'></script>
+
+
+    </head>
+    <body>
+
+
+        <div class="container">
+            <div class="sp-container">
+                <div class="sp-content">
+                    <div class="sp-wrap sp-left">
+                        <h2>
+                            <span class="sp-top">What if you could </span> 
+                            <span class="sp-mid">ask</span> 
+                            <span class="sp-bottom">anything?</span>
+                        </h2>
+                    </div>
+                    <div class="sp-wrap sp-right">
+                        <h2>
+                            <span class="sp-top">Wouldn't that be absolutely</span> 
+                            <span class="sp-mid">awesome<i>!</i><i>?</i></span> 
+                            <span class="sp-bottom">Yeah, it would!</span> 
+                        </h2>
+                    </div>
+                </div>
+                <div class="sp-full">
+                    <h2>Start asking now</h2>
+
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+        <div id="contenedor">
+
+            <form id="theForm" class="simform"  action="watson.html" method="GET" autocomplete="off">
+                <div class="simform-inner">
+
+                    <ol class="questions">
+                        <li>
+                            <span><label for="q1">What day is today?</label></span>
+                            <input id="question" name="question" type="text"/>
+                        </li>
+                    </ol><!-- /questions -->
+
+                    <button class="submit" type="submit">Ask</button>
+
+                    <div class="controls">
+                        <button class="next"></button>
+                        <div class="progress"></div>
+                        <span class="number">
+                            <span class="number-current"></span>
+                            <span class="number-total"></span>
+                        </span>
+                        <span class="error-message"></span>
+                    </div><!-- / controls -->
+
+                </div><!-- /simform-inner -->
+                <span class="final-message"></span>
+            </form><!-- /simform -->
+        </div>
+        <!-- /container -->
+        <script src="js/classie.js"></script>
+        <script src="js/stepsForm.js"></script>
+        <script>
+            $(document).ready(function () {
+                var theForm = document.getElementById('theForm');
+
+                new stepsForm(theForm, {
+                    onSubmit: function (form) {
+                        // hide form
+                        classie.addClass(theForm.querySelector('.simform-inner'), 'hide');
+
+
+                        //form.submit();
+                        console.log("sub");
+                        var pregunta = "what is a boilerplate?";
+                        form.submit();
+
+               /*         $.ajax({
+                            type: 'POST',
+                            url: '/ask',
+                            data: {question: pregunta},
+                            success: function (data) {
+                                var answers = JSON.parse(data);
+                                var an1 = answers.question.evidencelist[0];
+                                console.log(an1);
+                            }
+                        });*/
+
+
+                        // let's just simulate something...
+                        var messageEl = theForm.querySelector('.final-message');
+                        messageEl.innerHTML = 'We are looking for your answer...';
+                        classie.addClass(messageEl, 'show');
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

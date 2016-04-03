@@ -1,0 +1,25 @@
+
+button,input{
+    font-family:inherit;
+    font-size:100%;
+    margin:0;
+    z-index:3500;
+}
+button,input{
+    line-height:normal;
+}
+button{
+    text-transform:none;
+}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{
+    -webkit-appearance:button;
+    cursor:pointer;
+}
+button[disabled],html input[disabled]{
+    cursor:default;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration{
+    -webkit-appearance:none;
+}
