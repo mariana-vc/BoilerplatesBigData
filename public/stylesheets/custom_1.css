@@ -97,7 +97,7 @@
 	border: 2px dashed rgba(150,150,150,0.4);
 	border-radius: 50%;
 	position: absolute;
-	bottom: 50%;
+	top: 15%;
 	left: 50%;
 	margin: 0 0 0 -130px;
 }
@@ -148,15 +148,24 @@
 	height: 70px;
 	color: #8b8b8b;
 	z-index: 2;
-	bottom: 50%;
-	margin: 0 0 -120px 0;
+	//bottom: 55%;
+	//margin: 0 0 -120px 0;
 	padding: 0;
+}
+div.tamano{
+	overflow-y: scroll;
+	position: relative;
+        top: 50%;
+    	width: 70%;
+        height: 40%;
+        left: 15%;
 }
 
 .demo-1 .sl-slide blockquote p{
 	margin: 0 auto;
 	width: 100%;
-	max-width: 1000px;
+	max-width: 1200px;
+	max-height: 100px;
 	position: relative;
 }
 

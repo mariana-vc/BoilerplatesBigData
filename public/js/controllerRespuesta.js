@@ -32,7 +32,7 @@ $(document).ready(function () {
         data: {question: pregunta},
         success: function (data) {
             var answers = JSON.parse(data);
-
+			console.log(answers.question);
             var an1 = answers.question.evidencelist[0];
             if (!jQuery.isEmptyObject(an1)) {
                 console.log(an1);
