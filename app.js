@@ -4,6 +4,13 @@
 // node.js starter application for Bluemix
 //------------------------------------------------------------------------------
 
+
+'use strict';
+
+var express    = require('express'),
+  app          = express(),
+  watson       = require('watson-developer-cloud');
+
 // This application uses express as it's web server
 // for more info, see: http://expressjs.com
 var express = require('express');
@@ -60,8 +67,32 @@ var pi = require('./watsonpi');
 app.post('/analyzeText',pi.analyzeText);
 
 // start server on the specified port and binding host
+
+
+var textToSpeech = watson.text_to_speech({
+  version: 'v1',
+  url: 'https://stream.watsonplatform.net/text-to-speech/api',
+  username: '2d4ab30b-de32-4573-abab-15386022f40f',
+  password: 'FxATD6cxGZbC'
+});
+
+app.get('/api/synthesize', function(req, res, next) {
+  var transcript = textToSpeech.synthesize(req.query);
+  transcript.on('response', function(response) {
+    if (req.query.download) {
+      response.headers['content-disposition'] = 'attachment; filename=transcript.ogg';
+    }
+  });
+  transcript.on('error', function(error) {
+    next(error);
+  });
+  transcript.pipe(res);
+});
+
+
 app.listen(appEnv.port, appEnv.bind, function() {
 
 	// print a message when the server starts listening
   console.log("server starting on " + appEnv.url);
 });
+

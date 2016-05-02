@@ -1,3 +1,8 @@
+---
+declared-services:
+  text-to-speech-service:
+    label: text_to_speech
+    plan: standard
 applications:
 - path: .
   memory: 256M
@@ -6,3 +11,9 @@ applications:
   name: boilerplatesApp
   host: boilerplatesapp
   disk_quota: 1024M
+- services:
+  - text-to-speech-service
+  name: text-to-speech-nodejs-panda
+  command: node app.js  
+  path: .
+  memory: 768M

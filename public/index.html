@@ -12,7 +12,9 @@
         <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" />
         <link rel="stylesheet" type="text/css" href="stylesheets/demo1.css" />
         <link rel="stylesheet" type="text/css" href="stylesheets/component.css" />
-        <script type='text/javascript' src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+
+    
+         <script type='text/javascript' src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
 
         <script src="js/modernizr.custom.js"></script>
         <script type='text/javascript' src='js/askWatson.js'></script>
@@ -59,7 +61,10 @@
                     <ol class="questions">
                         <li>
                             <span><label for="q1">What is a boilerplate?</label></span>
-                            <input id="question" name="question" type="text"/>
+                            
+<!--                            <input id="question" name="question" type="text"/>
+-->
+                            <input id="textArea" spellcheck="false" name="question" type="text"/>
                         </li>
                     </ol><!-- /questions -->
 
@@ -80,8 +85,71 @@
             </form><!-- /simform -->
         </div>
         <!-- /container -->
+        
+        
+        
+        
+        
+        
+        
+        
+    <div class="container">
+
+
+      <div class="row">
+        <!--Drop down menus-->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" style="width: 120%;" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+            <span id="dropdownMenuDefault" class="dropdown-text">American English (en-US): Allison (female, expressive)</span>
+            <span class="caret" style="position:absolute;left:112%;"></span>
+            </button>
+            <ul id="dropdownMenuList" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tab panes -->
+
+      </div><!-- /.row -->
+
+      <div class="row">
+
+
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <button type=button class="speak-button btn btn-secondary">
+            Speak&emsp;
+          
+          </button>
+        </div>
+
+      </div><!-- /.row -->
+
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="audioParent">
+            <audio class="audio">
+            Your browser does not support the audio element.
+            </audio>
+          </div>
+        </div>
+      </div><!-- row -->
+
+
+        
+        
+        
+        
+        
+        
+        
         <script src="js/classie.js"></script>
         <script src="js/stepsForm.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/constants.js"></script>
+    <script src="js/demo.js"></script>
         <script>
             $(document).ready(function () {
                 var theForm = document.getElementById('theForm');
