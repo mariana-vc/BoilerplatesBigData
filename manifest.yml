@@ -8,8 +8,8 @@ applications:
   memory: 256M
   instances: 1
   domain: mybluemix.net
-  name: boilerplatesApp
-  host: boilerplatesapp
+  name: boilerplatesApp2
+  host: boilerplatesapp2
   disk_quota: 1024M
 - services:
   - text-to-speech-service
