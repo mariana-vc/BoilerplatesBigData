@@ -155,12 +155,12 @@ $(document).ready(function() {
     });
 
     var audio = $('.audio').get(0),
-        textArea = $('#textArea');
+        textArea = $('#texto1').text();
 
     var textChanged = false;
 
    
-    $('#textArea').change(function(){
+    $('#texto1').change(function(){
       textChanged = true;
     });
 
@@ -203,7 +203,7 @@ $(document).ready(function() {
       textArea.focus();
       if (validText(voice, textArea.val())) {
         var utteranceDownloadOptions = {
-          text: currentTab === 'SSML' || currentTab === 'Expressive SSML' ? $('#ssmlArea').val(): $('#textArea').val(),
+          text: currentTab === 'SSML' || currentTab === 'Expressive SSML' ? $('#ssmlArea').val(): $('#texto1').text(),
           voice: voice,
           download: true
         };
@@ -216,8 +216,8 @@ $(document).ready(function() {
       evt.preventDefault();
       $('.result').hide();
 
-      $('#textArea').focus();
-      var text = currentTab === 'SSML' || currentTab === 'Expressive SSML' ? $('#ssmlArea').val() : $('#textArea').val();
+      $('#texto1').focus();
+      var text = currentTab === 'SSML' || currentTab === 'Expressive SSML' ? $('#ssmlArea').val() : $('#texto1').text();
       if (validText(voice, text)) {
         var utteranceOptions = {
           text: text,

@@ -17,3 +17,10 @@ applications:
   command: node app.js  
   path: .
   memory: 768M
+- services:
+  - speech-to-text-service-standard
+  name: speech-to-text-nodejs-panda
+  command: node app.js
+  path: .
+  memory: 512M
+

@@ -76,6 +76,13 @@ var textToSpeech = watson.text_to_speech({
   password: 'FxATD6cxGZbC'
 });
 
+var config = {
+  version: 'v1',
+  url: 'https://stream.watsonplatform.net/speech-to-text/api',
+  username: '203bfd89-fdbe-4f89-980e-8d147c4bb8c2',
+  password: 'wRokANBusEMz'
+};
+
 app.get('/api/synthesize', function(req, res, next) {
   var transcript = textToSpeech.synthesize(req.query);
   transcript.on('response', function(response) {
