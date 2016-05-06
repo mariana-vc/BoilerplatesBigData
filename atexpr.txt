@@ -1,0 +1,28 @@
+		//System.out.println(node.getExpr().getType()); //busco qué metodos tiene asociado la clase
+		System.out.println(node.getExpr().getType()); //
+		//System.out.println(node.getTypeId());
+		
+		String claseDeAt = node.getExpr().getClass().getSimpleName(); //clase
+		
+		
+		if(claseDeAt.trim().equals("AIntExpr")){
+			
+		}else if(claseDeAt.trim().equals("AStrExpr")){
+			 
+			 try {
+				 System.out.println("METODO: "+ node.getObjectId().getText());
+				 Method methodToFind = String.class.getMethod(node.getObjectId().getText(), (Class<?>[]) null);
+				 
+			} catch (NoSuchMethodException e) {
+				System.out.println("NO SE ENCONTRO");
+				//e.printStackTrace();
+			} catch (SecurityException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}else if(claseDeAt.trim().equals("ABoolExpr")){
+			
+		}else{
+			System.out.println("BUSCAR EN CLASES QUE HEREDAN");
+		}*/
